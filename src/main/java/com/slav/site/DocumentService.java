@@ -1,7 +1,10 @@
 package com.slav.site;
 
-/**
- * Created by Slawek on 2017-04-01.
- */
+import com.slav.site.entity.Document;
+
+import java.util.Map;
+
 public interface DocumentService {
+
+    Map<String, Document> listDocuments();
 }

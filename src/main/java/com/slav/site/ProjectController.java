@@ -28,6 +28,13 @@ public class ProjectController {
         return new ModelAndView("projectBrowser");
     }
 
+    @RequestMapping(value = "/projectServiceTest", method = RequestMethod.GET)
+    public void listRepoProjects() {
+
+        projectService.listProjects().forEach((p) -> System.out.println(p.getProjectName()));
+    }
+
+
     @RequestMapping(value = "/projects/{name}", method = RequestMethod.GET)
     public ModelAndView displayProject(@PathVariable("name") String projectName,
                                        Map<String, Object> model) {

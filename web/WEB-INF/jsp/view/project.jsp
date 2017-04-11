@@ -23,4 +23,5 @@
     <form:input path="receivedDate"/><br/><br/>
     <form:label path="issuedDate">Issued Date</form:label><br/>
     <form:input path="issuedDate"/><br/><br/>
+    <input type="submit" value="Search"/>
 </form:form>
