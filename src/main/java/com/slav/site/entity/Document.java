@@ -1,13 +1,16 @@
 package com.slav.site.entity;
 
+import javax.persistence.*;
 import java.time.Instant;
 import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+@Entity
+@Table(name = "Documents")
 public class Document {
 
-    private long documentIndexNumber;
+    private long id;
 
     private String documentName;
     private String documentType;
@@ -16,7 +19,7 @@ public class Document {
     private String documentDescription;
     private String documentStatus;
 
-    private Map<String, Attachment> attachments = new LinkedHashMap<>();
+    //private Map<String, Attachment> attachments = new LinkedHashMap<>();
 
     private Instant statusDate;
     private Date receivedDate;
@@ -30,14 +33,17 @@ public class Document {
         this.documentName = documentName;
     }
 
-    public long getDocumentIndexNumber() {
-        return documentIndexNumber;
+    @Id
+    @Column(name = "documentId")
+    public long getId() {
+        return id;
     }
 
-    public void setDocumentIndexNumber(long documentIndexNumber) {
-        this.documentIndexNumber = documentIndexNumber;
+    public void setId(long id) {
+        this.id = id;
     }
 
+    @Basic
     public String getDocumentName() {
         return documentName;
     }
@@ -46,6 +52,7 @@ public class Document {
         this.documentName = documentName;
     }
 
+    @Basic
     public String getDocumentType() {
         return documentType;
     }
@@ -54,6 +61,7 @@ public class Document {
         this.documentType = documentType;
     }
 
+    @Basic
     public String getDocumentSubType() {
         return documentSubType;
     }
@@ -62,6 +70,7 @@ public class Document {
         this.documentSubType = documentSubType;
     }
 
+    @Basic
     public String getResponsiblePerson() {
         return responsiblePerson;
     }
@@ -70,6 +79,7 @@ public class Document {
         this.responsiblePerson = responsiblePerson;
     }
 
+    @Basic
     public String getDocumentDescription() {
         return documentDescription;
     }
@@ -78,6 +88,7 @@ public class Document {
         this.documentDescription = documentDescription;
     }
 
+    @Basic
     public String getDocumentStatus() {
         return documentStatus;
     }
@@ -86,14 +97,16 @@ public class Document {
         this.documentStatus = documentStatus;
     }
 
+    /*@Basic
     public Map<String, Attachment> getAttachments() {
         return attachments;
     }
 
     public void setAttachments(Map<String, Attachment> attachments) {
         this.attachments = attachments;
-    }
+    }*/
 
+    @Basic
     public Instant getStatusDate() {
         return statusDate;
     }
@@ -102,6 +115,7 @@ public class Document {
         this.statusDate = statusDate;
     }
 
+    @Basic
     public Date getReceivedDate() {
         return receivedDate;
     }
@@ -110,6 +124,7 @@ public class Document {
         this.receivedDate = receivedDate;
     }
 
+    @Basic
     public Date getForecastIssueDate() {
         return forecastIssueDate;
     }
@@ -118,6 +133,7 @@ public class Document {
         this.forecastIssueDate = forecastIssueDate;
     }
 
+    @Basic
     public Date getIssuedDate() {
         return issuedDate;
     }
@@ -126,8 +142,9 @@ public class Document {
         this.issuedDate = issuedDate;
     }
 
+    /*@Basic
     public void addAttachment(Attachment attachment) {
 
         attachments.put(attachment.getName(), attachment);
-    }
+    }*/
 }

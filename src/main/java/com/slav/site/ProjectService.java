@@ -7,5 +7,5 @@ import java.util.Map;
 
 public interface ProjectService {
 
-    Map<String, Project> listProjects();
+    Iterable<Project> listProjects();
 }
