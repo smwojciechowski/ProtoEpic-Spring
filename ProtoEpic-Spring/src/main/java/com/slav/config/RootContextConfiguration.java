@@ -10,4 +10,6 @@ import org.springframework.stereotype.Controller;
         excludeFilters = @ComponentScan.Filter(Controller.class)
 )
 public class RootContextConfiguration {
+
+    //TEST
 }
