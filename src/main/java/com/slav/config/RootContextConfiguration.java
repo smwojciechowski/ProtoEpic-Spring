@@ -54,11 +54,12 @@ public class RootContextConfiguration {
         factory.setJpaVendorAdapter(adapter);
         factory.setDataSource(this.springJpaDataSource());
         factory.setPackagesToScan("com.slav.site.entity");
+        //added third comment (yet again)
         factory.setPersistenceUnitName("defaultPersistenceUnit");
         factory.setSharedCacheMode(SharedCacheMode.ENABLE_SELECTIVE);
         factory.setValidationMode(ValidationMode.NONE);
         factory.setJpaPropertyMap(properties);
-
+        //added first comment (again)
         return factory;
     }
 
@@ -68,6 +69,7 @@ public class RootContextConfiguration {
 
         return new JpaTransactionManager(
                 this.entityManagerFactoryBean().getObject()
+                //added second comment (again)
         );
     }
 
